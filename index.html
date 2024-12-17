@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <title>VECTORES EN R2</title>
+        <meta name="description" content="Teoria hacer de los vectores en R2 (Plano)."/>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>TEORIA ACERCA DE LOS VECTORES EN R2<br> 
+            (VECTORES EN EL PLANO)</h2>
+        <h3>DEFINICION DE UN VECTOR</h3>
+        <p>
+            <p>Un vector es un segmento de recta dirigido el cual va de un punto P a un punto Q.
+            Para que dos vectores sean iguales, ambos tienen que tener igual norma y dirección.
+            Tiene tres formas de representarse.</p>
+            
+            <div>Forma Vectorial:</div>
+            <div>V = ai + bj </div>
+            <div>(i representa el eje x y j el eje y)</div>
+            <p></p>
+               <div>Forma Cartesiana:</div>
+               <div>V = (a,b)</div>
+               <p></p>
+               <div>Forma Polar:</div>
+               <div>V = rcos&theta;i + rsen&theta;j</div>
+               <div>(Donde r es la norma del vector y &theta; es la dirección del vector.<br>
+                ademas: a = rcos&theta; y b = rsen&theta;)</div>
+            <p></p>
+
+        </p>
+        <h3>NORMA Y DIRECCIÓN DE UN VECTOR</h3>
+        <p>
+            <div>La norma de un vector representa su longitud o magnitud, y se denota ‖v‖.</div>
+            <div>‖v‖ = √(a<sup>2</sup> + b<sup>2</sup>)</div>
+            <p></p>
+            <div>La dirreción de un vector es el angulo formado entre el eje x y el vector yendo 
+                a contrareloj de las manecillas del reloj (este angulo esta entre [0,2&pi;]). se denota con el simbolo &theta; o Dir(v).</div>
+                <p>&theta; = tan<sup>-1</sup>(\(\frac{b}{a}\)) + h <br>
+                Donde h cambia segundo el cuadrante:<br><br>
+                Cuadrante 1:   h = 0<br>
+                Cuadrante 2,3: h = &pi;<br>
+                Cuadrante 4:   h = 2&pi;</p>
+
+                <div>NOTA: Todo vector se puede recuperar con su norma y dirección.</div>
+        </p>
+        <h3>VECTOR NULO Y VECTOR UNITARIO</h3>
+        <p>
+            <div>Un vector nulo es aquel el cual sus componentes son iguales a 0, es decir:<br>
+             V = 0</div>
+            <div>Un vector unitario es aquel cuya norma es igual a 1, es decir:<br>
+                ‖v‖ = 1</div>
+        </p>
+        <h3>MULTIPLICACIÓN POR UN ESCALAR</h3>
+        <p>
+            <div>Sea &alpha; un escalar (Número real) &ne; 0 , y V un vector no nulo.</div>
+            <div> &alpha;V = (&alpha;a + &alpha;b)</div>
+            <h4>Proposiciones:</h4>
+            <div>(i) ‖&alpha;V‖ = |&alpha;|*‖V‖</div>
+            <div>(ii) Dir(&alpha;V) es:<br>
+            Dir(V) Para &alpha; &gt; 0 <br>
+            Dir(V) + &pi; Para &alpha; &lt; 0</div>
+        </p>
+        <h3>OPERACIONES Y ANGULO ENTRE VECTORES</h3>
+        <p>
+            <h4>Suma</h4>
+            <div>La suma de vectores se hace componente a componente.<br>
+            Sean V = (a,b) y U = (c,d) vectores no nulos, entonces:<br>
+            U + V = (a + c, b + d) 
+            </div>
+            <p></p>
+            <h4>Producto punto o escalar</h4>
+            <div>El producto punto entre vectores se hace componente a componente y el resultado es un escalar.<br>
+            Sean V = (a,b) y U = (c,d) vectores no nulos, entonces:<br>
+            U * V = ac + bd </div>
+            <p></p>
+            <h4>Angulo entre vectores</h4>
+            <div>Sean V y U dos vectores cualesquiera, tales que ‖V‖‖U‖ &ne; 0.<br>
+            Entonces, el angulo formado entre los vectores V y U denota como &Phi; es:<br>
+            &Phi; = cos<sup>-1</sup>(\(\frac{U*V}{‖U‖*‖V‖}\))<br>
+            <br> Donde &Phi; esta en el intervalo [0,&pi;] </div>
+            <p></p>
+            <h4>PROYECCIÓN DE UN VECTOR SOBRE OTRO</h4>
+            <div>Sea Proy<sub>V</sub>U = (\(\frac{U*V}{‖V‖^2}\))*V</div>
+            <div>Donde U y V son vectores no nulos, un nuevo vector con la misma direccion que V y U -Proy<sub>V</sub>U perpendicular a V.</div>
+            <div>Ademas el angulo formado por los vectores U y V esta entre (0,\(\frac{&pi;}{2}\)).</div>
+            <p></p>
+            <h4>Proposiciones:</h4>
+            <div>(i) U y V son Ortogonales si el angulo entre ellos es \(\frac{&pi;}{2}\), U&perp;V.</div>
+            <div>(ii) U y V son Paralelos si el angulo entre ellos es 0, U∥V. </div>
+            <div>(iii) U&perp;V &hArr; U*V = 0.</div>
+            <div>(iV) U∥V &hArr; V = &alpha;U Para algun &alpha;&in;<mathbb>R</mathbb>. </div>
+            <div>(V) V*V=∥V∥<sup>2.</sup></div>
+            <div>(Vi) (&alpha;V)*U = &alpha;(V*U)</div>
+            <div>(Vii) U*V = V*U</div>
+            <div>(Viii) ∥U*V∥<sup>2</sup> = ∥U∥<sup>2</sup> -2U*V + ∥V∥<sup>2</sup></div>
+            <div>(ViV) Si W = (e,f) Entonces: U*(V + W) = U*V + U*W</div>
+        </p>
+        
+    </body>
+</html>

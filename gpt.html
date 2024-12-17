@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectores en R2</title>
+    <meta name="description" content="Teoría de vectores en R2 (Plano)">
+    
+    <!-- MathJax for mathematical notation -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2, h3, h4 {
+            color: #333;
+        }
+        .math-notation {
+            font-style: italic;
+            color: #0066cc;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        .note {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Teoría de Vectores en R2 (Vectores en el Plano)</h2>
+    </header>
+
+    <main>
+        <section>
+            <h3>Definición de un Vector</h3>
+            <p>Un vector es un segmento de recta dirigido que va de un punto P a un punto Q. Para que dos vectores sean iguales, ambos tienen que tener igual norma y dirección.</p>
+            
+            <h4>Formas de Representación</h4>
+            <dl>
+                <dt>Forma Vectorial:</dt>
+                <dd><span class="math-notation">V = ai + bj</span> (i representa el eje x y j el eje y)</dd>
+                
+                <dt>Forma Cartesiana:</dt>
+                <dd><span class="math-notation">V = (a,b)</span></dd>
+                
+                <dt>Forma Polar:</dt>
+                <dd><span class="math-notation">V = r cos(&theta;)i + r sen(&theta;)j</span>
+                    <p>(Donde r es la norma del vector y &theta; es la dirección del vector.<br>
+                    Además: a = r cos(&theta;) y b = r sen(&theta;))</p>
+                </dd>
+            </dl>
+        </section>
+
+        <section>
+            <h3>Norma y Dirección de un Vector</h3>
+            <p>La norma de un vector representa su longitud o magnitud, y se denota ‖v‖.</p>
+            <p><span class="math-notation">‖v‖ = √(a² + b²)</span></p>
+            
+            <p>La dirección de un vector es el ángulo formado entre el eje x y el vector, yendo en sentido contrario a las manecillas del reloj (este ángulo está entre [0, 2π]). Se denota con el símbolo &theta; o Dir(v).</p>
+            
+            <p>&theta; = tan⁻¹(b/a) + h<br>
+            Donde h cambia según el cuadrante:</p>
+            <ul>
+                <li>Cuadrante 1: h = 0</li>
+                <li>Cuadrante 2, 3: h = π</li>
+                <li>Cuadrante 4: h = 2π</li>
+            </ul>
+            
+            <p class="note"><strong>NOTA:</strong> Todo vector se puede recuperar con su norma y dirección.</p>
+        </section>
+
+        <section>
+            <h3>Vector Nulo y Vector Unitario</h3>
+            <dl>
+                <dt>Vector Nulo</dt>
+                <dd>Es aquel cuyos componentes son iguales a 0, es decir: <span class="math-notation">V = 0</span></dd>
+                
+                <dt>Vector Unitario</dt>
+                <dd>Es aquel cuya norma es igual a 1, es decir: <span class="math-notation">‖v‖ = 1</span></dd>
+            </dl>
+        </section>
+
+        <section>
+            <h3>Multiplicación por un Escalar</h3>
+            <p>Sea &alpha; un escalar (Número real) &ne; 0, y V un vector no nulo.</p>
+            <p><span class="math-notation">&alpha;V = (&alpha;a, &alpha;b)</span></p>
+            
+            <h4>Proposiciones:</h4>
+            <ol>
+                <li><span class="math-notation">‖&alpha;V‖ = |&alpha;| * ‖V‖</span></li>
+                <li>Dirección de <span class="math-notation">&alpha;V</span>:
+                    <ul>
+                        <li>Dirección de V para &alpha; &gt; 0</li>
+                        <li>Dirección de V + π para &alpha; &lt; 0</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Operaciones y Ángulo entre Vectores</h3>
+            <h4>Suma de Vectores</h4>
+            <p>La suma de vectores se hace componente a componente.</p>
+            <p>Sean <span class="math-notation">V = (a,b)</span> y <span class="math-notation">U = (c,d)</span> vectores no nulos:</p>
+            <p><span class="math-notation">U + V = (a + c, b + d)</span></p>
+
+            <h4>Producto Punto o Escalar</h4>
+            <p>El producto punto entre vectores se hace componente a componente y el resultado es un escalar.</p>
+            <p>Sean <span class="math-notation">V = (a,b)</span> y <span class="math-notation">U = (c,d)</span> vectores no nulos:</p>
+            <p><span class="math-notation">U * V = ac + bd</span></p>
+
+            <h4>Ángulo entre Vectores</h4>
+            <p>Sean V y U dos vectores cualesquiera, tales que ‖V‖‖U‖ &ne; 0.</p>
+            <p>El ángulo formado entre los vectores V y U, denotado como &Phi;, es:</p>
+            <p><span class="math-notation">&Phi; = cos⁻¹((U * V) / (‖U‖ * ‖V‖))</span></p>
+            <p>Donde &Phi; está en el intervalo [0, π]</p>
+
+            <h4>Proyección de un Vector sobre Otro</h4>
+            <p><span class="math-notation">Proy<sub>V</sub>U = ((U * V) / ‖V‖²) * V</span></p>
+            <p>Donde U y V son vectores no nulos, generando un nuevo vector con la misma dirección que V, y U - Proy<sub>V</sub>U perpendicular a V.</p>
+            <p>El ángulo formado por los vectores U y V está entre (0, π/2).</p>
+
+            <h4>Proposiciones</h4>
+            <ol>
+                <li>U y V son ortogonales si el ángulo entre ellos es π/2, U ⊥ V</li>
+                <li>U y V son paralelos si el ángulo entre ellos es 0, U ∥ V</li>
+                <li>U ⊥ V &hArr; U * V = 0</li>
+                <li>U ∥ V &hArr; V = &alpha;U para algún &alpha; ∈ ℝ</li>
+                <li>V * V = ‖V‖²</li>
+                <li>(&alpha;V) * U = &alpha;(V * U)</li>
+                <li>U * V = V * U</li>
+                <li>‖U * V‖² = ‖U‖² - 2(U * V) + ‖V‖²</li>
+                <li>Si W = (e,f), entonces U * (V + W) = U * V + U * W</li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
